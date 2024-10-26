@@ -188,11 +188,10 @@ h3.hello {
     font-size: 18px;
 }
 
-@media (width: 600px) {
+@media (min-width: 1104px) {
     .about-content .left img {
         height: 100%;
         width: 95%;
-
     }
 }
 
@@ -576,8 +575,67 @@ i {
 }
 
 
-/* Adjust font sizes and spacing on small screens */
+/* BREAKPOINTS */
+
+
+@media (max-width: 991px) {
+    .footer {
+        padding: 2rem 3%;
+    }
+
+    .project {
+        padding-bottom: 7rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+}
+
 @media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: black;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    }
+
+    .navbar a {
+        display: block;
+    }
+
+    .project h2 {
+        margin-bottom: 3rem;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    
+}
+/* General mobile-first adjustments */
+@media (max-width: 576px) {
     h1.name {
         font-size: 48px;
     }
@@ -588,99 +646,145 @@ i {
 
     .my-skill-card {
         margin-left: 0;
-        padding: 15px;
+        padding: 20px;
     }
 
-    .project-title {
-        font-size: 32px;
-    }
-}
-
-/* Adjust grid layout for projects and skills on small screens */
-@media (max-width: 576px) {
-    .fas {
-        font-weight: 700;
-    }
-    i {
-        font-size: 30px;
-        color: crimson;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-    .my-skill-card {
-        padding-top: 20px;
-        padding-bottom: 50px;
-    }
-    .my-skill-icon {
-        color:crimson;
-    }
-    .my-skill-card {
-        background-color: #111;
-        width: 100%;
-        color: white;
-        text-align: center;
-        margin-left: 60px;
-        
-        margin-bottom: 10px;
-        border-radius: 8px;
-    }
-    .my-skill-card:hover {
-        background-color:crimson;
-        transform: scale(1.02);
-    }
-    .my-skill-description {
-        font-size: 22px;
-        font-weight: 300;
-        color:crimson;
-    }
-    .my-skill-heading {
-        font-size: 25px;
-        font-weight: 400;
-       
-        margin: 10px 0 7px 0;
-    }
-    .my-skill-text {
-        color: white;
-        text-align: center;
-        padding-top: 10px;
-        padding-bottom: 20px;
-        font-size: 25px;
-        font-weight: 500;
-    }
-    .my-skills {
-        background-color: black;
-        padding: 25px;
-        padding-top: 80px;
-    }
-    .mobile-cart{
-        margin-right: 40px;
-    }
-}
-
-@media (max-width: 992px) {
-    .project-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .my-skills, .projects {
-        padding: 30px;
-    }
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
+    .main-content, .my-skills, .about, .projects {
+        padding: 10px;
     }
 
     .project-container {
         grid-template-columns: 1fr;
     }
 
-    .navbar-nav .nav-link {
-        padding: 8px;
-        font-size: 1rem;
+    .home-info h3, .home-info h1 {
+        text-align: center;
+    }
+
+    .container, .media-card {
+        width: 100%;
+    }
+
+    .navbar {
+        background-color: black;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 991px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1.name {
+        font-size: 60px;
+    }
+
+    .my-skill-card {
+        margin-left: 20px;
+    }
+
+    .main-content, .my-skills, .about {
+        padding-left: 10px;
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 992px) {
+    .navbar {
+        background-color: transparent;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+    .home-info, .about-content {
+        text-align: center;
+        padding: 10px;
+    }
+    .my-skill-card, .project-container {
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+    .my-skill-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer {
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 450px) {
+    h1.name {
+        font-size: 48px;
+    }
+    h3.hello {
+        font-size: 18px;
+    }
+    .my-skill-card {
+        margin-left: 0;
+        padding: 20px;
+    }
+    .main-content, .my-skills, .about, .projects {
+        padding: 10px;
+    }
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+    .home-info h3, .home-info h1 {
+        text-align: center;
+    }
+    .container, .media-card {
+        width: 100%;
+    }
+    .navbar {
+        background-color: black;
+    }
+}
+
+/* Center skill cards */
+.my-skill-card {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Center content in mobile view */
+@media (max-width: 768px) {
+    .my-skills, .projects, .about, .home-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .project-container {
+        justify-content: center;
+    }
+    .cnt{
+        align-items: baseline;
+        justify-content: baseline;
+        padding-right: 80px;
+        
     }
 }
 
